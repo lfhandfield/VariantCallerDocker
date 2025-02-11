@@ -12,7 +12,7 @@ RUN wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar
     cd htslib-1.9 && \
     make && \
     make install
-    
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 
 CMD ["/bin/bash"]
