@@ -13,6 +13,7 @@ RUN wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar
     make && \
     make install
 RUN ln -s /usr/bin/python3 /usr/bin/python
+RUN python -m pip install open-cravat
 
 
 CMD ["/bin/bash"]
