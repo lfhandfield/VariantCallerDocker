@@ -13,7 +13,7 @@ RUN wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar
     make && \
     make install
 RUN ln -s /usr/bin/python3 /usr/bin/python
-RUN apt-get install python3.12-venv && python3 -m venv /opt/venv && /bin/bash -c "source /opt/venv/bin/activate && pip install open-cravat"
+RUN apt-get install -y python3.12-venv && python3 -m venv /opt/venv && /bin/bash -c "source /opt/venv/bin/activate && pip install open-cravat"
 RUN echo '#!/bin/bash\nsource /opt/venv/bin/activate\nexec "$@"' > /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/entrypoint.sh
 
 ENV PATH="/opt/venv/bin:$PATH"
